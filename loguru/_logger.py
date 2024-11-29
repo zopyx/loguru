@@ -2058,7 +2058,7 @@ class Logger:
         if core.patcher:
             core.patcher(log_record)
 
-        for patcher in patchers:
+        for patcher in (patchers or ()):
             patcher(log_record)
 
         for handler in core.handlers.values():
